@@ -9,11 +9,13 @@
     "@testing-library/jest-native": "*",
     "@testing-library/react-native": "*",
     "metro-config": "*",
+    "nativewind": "*",
     "react": "*",
     "react-native": "*",
     "react-native-safe-area-context": "*",
     "react-native-screens": "*",
     "react-native-svg": "*",
-    "react-native-svg-transformer": "*"
+    "react-native-svg-transformer": "*",
+    "tailwindcss": "*"
   }
 }
