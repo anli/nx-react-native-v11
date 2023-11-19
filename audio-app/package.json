@@ -4,12 +4,16 @@
   "private": true,
   "dependencies": {
     "@react-native/metro-config": "*",
+    "@react-navigation/native": "*",
+    "@react-navigation/native-stack": "*",
     "@testing-library/jest-native": "*",
     "@testing-library/react-native": "*",
+    "metro-config": "*",
     "react": "*",
     "react-native": "*",
+    "react-native-safe-area-context": "*",
+    "react-native-screens": "*",
     "react-native-svg": "*",
-    "metro-config": "*",
     "react-native-svg-transformer": "*"
   }
 }
