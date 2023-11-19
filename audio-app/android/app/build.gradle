@@ -74,9 +74,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.audioapp"
+    namespace "com.anlitz.audio"
     defaultConfig {
-        applicationId "com.audioapp"
+        applicationId "com.anlitz.audio"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

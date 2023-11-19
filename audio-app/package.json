@@ -1,5 +1,5 @@
 {
-  "name": "audio-app",
+  "name": "audio",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
@@ -9,6 +9,7 @@
     "react": "*",
     "react-native": "*",
     "react-native-svg": "*",
-    "metro-config": "*"
+    "metro-config": "*",
+    "react-native-svg-transformer": "*"
   }
 }

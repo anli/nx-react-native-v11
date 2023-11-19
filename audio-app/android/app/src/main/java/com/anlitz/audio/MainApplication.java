@@ -1,4 +1,4 @@
-package com.audioapp;
+package com.anlitz.audio;
 
 import android.app.Application;
 import com.facebook.react.PackageList;
