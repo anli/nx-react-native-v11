@@ -1,4 +1,4 @@
-package com.airbnbapp;
+package com.anlitz.airbnb;
 
 import android.app.Application;
 import com.facebook.react.PackageList;
