@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
-import {
-  Pressable,
-  StatusBar,
-  Text,
-  View,
-  ActivityIndicator,
-} from 'react-native';
+import { Pressable, StatusBar, View, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Icons from 'react-native-heroicons/solid';
 import LinearGradient from 'react-native-linear-gradient';
 import FrequencyManager from 'react-native-frequency';
 import NativeSlider from '@react-native-community/slider';
 import { styled } from 'nativewind';
+import { Text } from '@nx-react-native/shared-ui';
 
 const PlayIcon = styled(Icons.PlayIcon);
 const Slider = styled(NativeSlider);
@@ -57,13 +52,13 @@ export const ToneGeneratorPage = () => {
       />
       <SafeAreaView className="flex-1">
         <View className="py-5 px-5">
-          <Text className="text-4xl font-bold text-white tracking-wide">
+          <Text className="text-white" type="headline-large">
             Tone Generator
           </Text>
         </View>
 
         <View className="flex-1 justify-center items-center">
-          <Text className="text-center text-white text-5xl font-thin">
+          <Text className="text-white" type="display-medium">
             {frequency.toLocaleString()} Hz
           </Text>
         </View>
