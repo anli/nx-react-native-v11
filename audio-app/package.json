@@ -16,6 +16,14 @@
     "react-native-screens": "*",
     "react-native-svg": "*",
     "react-native-svg-transformer": "*",
-    "tailwindcss": "*"
+    "tailwindcss": "*",
+    "react-native-vector-icons": "*",
+    "react-native-heroicons": "*",
+    "react-native-linear-gradient": "*",
+    "@react-native-community/slider": "*",
+    "react-native-circular-progress": "*",
+    "react-native-reanimated": "*",
+    "react-native-gesture-handler": "*",
+    "react-native-frequency": "*"
   }
 }
