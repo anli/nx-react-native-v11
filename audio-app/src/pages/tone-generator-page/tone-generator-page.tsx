@@ -4,12 +4,10 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Icons from 'react-native-heroicons/solid';
 import LinearGradient from 'react-native-linear-gradient';
 import FrequencyManager from 'react-native-frequency';
-import NativeSlider from '@react-native-community/slider';
+import { Slider, Text } from '@nx-react-native/shared-ui';
 import { styled } from 'nativewind';
-import { Text } from '@nx-react-native/shared-ui';
 
 const PlayIcon = styled(Icons.PlayIcon);
-const Slider = styled(NativeSlider);
 const defaultFrequency = 440;
 const defaultPlayTimeInSeconds = 3;
 type Mode = 'READY' | 'PLAYING';
@@ -21,9 +19,6 @@ const primaryAccentColor = '#3b82f6';
 export const ToneGeneratorPage = () => {
   const [frequency, setFrequency] = useState<number>(defaultFrequency);
   const [mode, setMode] = useState<Mode>('READY');
-  const sliderValue = Math.log10(frequency);
-  const sliderMinValue = Math.log10(minFrequency);
-  const sliderMaxValue = Math.log10(maxFrequency);
 
   const handlePlay = async () => {
     try {
@@ -32,10 +27,6 @@ export const ToneGeneratorPage = () => {
     } finally {
       setMode('READY');
     }
-  };
-
-  const handleSliderChange = (value: number) => {
-    setFrequency(Math.floor(Math.pow(10, value)));
   };
 
   return (
@@ -64,11 +55,11 @@ export const ToneGeneratorPage = () => {
         </View>
 
         <View className="m-6">
-          <Slider
-            minimumValue={sliderMinValue}
-            maximumValue={sliderMaxValue}
-            value={sliderValue}
-            onValueChange={handleSliderChange}
+          <Slider.Exponential
+            minimumValue={minFrequency}
+            maximumValue={maxFrequency}
+            value={frequency}
+            onValueChange={setFrequency}
             minimumTrackTintColor="#FFFFFF"
             maximumTrackTintColor={primaryAccentColor}
             thumbTintColor="#FFFFFF"
