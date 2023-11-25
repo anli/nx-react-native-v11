@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
-import { Pressable, View, ActivityIndicator } from 'react-native';
+import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import * as Icons from 'react-native-heroicons/solid';
 import FrequencyManager from 'react-native-frequency';
-import { Background, Slider, Text } from '@nx-react-native/shared-ui';
-import { styled } from 'nativewind';
+import { Background, Slider, Text, Button } from '@nx-react-native/shared-ui';
 
-const PlayIcon = styled(Icons.PlayIcon);
 const defaultFrequency = 440;
 const defaultPlayTimeInSeconds = 3;
-type Mode = 'READY' | 'PLAYING';
 const minFrequency = 10;
 const maxFrequency = 20000;
 const primaryColor = '#1d4ed8';
@@ -17,15 +13,9 @@ const primaryAccentColor = '#3b82f6';
 
 export const ToneGeneratorPage = () => {
   const [frequency, setFrequency] = useState<number>(defaultFrequency);
-  const [mode, setMode] = useState<Mode>('READY');
 
   const handlePlay = async () => {
-    try {
-      setMode('PLAYING');
-      await FrequencyManager.playFrequency(frequency, defaultPlayTimeInSeconds);
-    } finally {
-      setMode('READY');
-    }
+    await FrequencyManager.playFrequency(frequency, defaultPlayTimeInSeconds);
   };
 
   return (
@@ -60,16 +50,11 @@ export const ToneGeneratorPage = () => {
             className="w-full my-2"
           />
 
-          <Pressable
-            className="active:opacity-50 h-14 w-14 bg-white rounded-full self-center items-center justify-center"
+          <Button.Play
             onPress={handlePlay}
-            disabled={mode === 'PLAYING'}
-          >
-            {mode === 'PLAYING' && <ActivityIndicator className="blue-700" />}
-            {mode === 'READY' && (
-              <PlayIcon size={24} className="text-blue-700" />
-            )}
-          </Pressable>
+            iconStyle="text-blue-700"
+            className="bg-white"
+          />
         </View>
       </SafeAreaView>
     </>
