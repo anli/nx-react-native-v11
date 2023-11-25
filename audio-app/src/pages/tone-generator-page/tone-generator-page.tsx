@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Pressable, StatusBar, View, ActivityIndicator } from 'react-native';
+import { Pressable, View, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Icons from 'react-native-heroicons/solid';
-import LinearGradient from 'react-native-linear-gradient';
 import FrequencyManager from 'react-native-frequency';
-import { Slider, Text } from '@nx-react-native/shared-ui';
+import { Background, Slider, Text } from '@nx-react-native/shared-ui';
 import { styled } from 'nativewind';
 
 const PlayIcon = styled(Icons.PlayIcon);
@@ -31,15 +30,10 @@ export const ToneGeneratorPage = () => {
 
   return (
     <>
-      <StatusBar
-        backgroundColor={primaryAccentColor}
+      <Background
+        startColor={primaryAccentColor}
+        endColor={primaryColor}
         barStyle="light-content"
-      />
-      <LinearGradient
-        className="absolute h-full w-full"
-        colors={[primaryAccentColor, primaryColor]}
-        start={{ x: 0.5, y: 0 }}
-        end={{ x: 0.5, y: 1 }}
       />
       <SafeAreaView className="flex-1">
         <View className="py-5 px-5">
