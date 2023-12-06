@@ -1,0 +1,22 @@
+name: Install dependencies
+description: node modules, env
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup env
+      shell: bash
+      run: |
+        git fetch origin $GITHUB_BASE_REF
+
+    - name: Cache Node Modules
+      id: cache-node-modules
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key: node-modules-v1-${{ hashFiles('yarn.lock', 'patches') }}
+
+    - name: Install Dependencies
+      shell: bash
+      if: steps.cache-node-modules.outputs.cache-hit != 'true'
+      run: yarn install --frozen-lockfile
