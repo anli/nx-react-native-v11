@@ -4,7 +4,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "nx start"
+    "start": "nx start",
+    "lint": "nx run-many --target=lint --all",
+    "test": "nx run-many --target=test --all",
+    "type-check": "nx run-many --target=type-check --all"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
