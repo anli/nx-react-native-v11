@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "start": "nx start",
-    "lint": "nx run-many --target=lint --all",
-    "test": "nx run-many --target=test --all",
-    "type-check": "nx run-many --target=type-check --all"
+    "lint": "nx affected:lint",
+    "test": "nx affected:test",
+    "type-check": "nx affected --target=type-check"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
