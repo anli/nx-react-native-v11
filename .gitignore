@@ -109,6 +109,4 @@ yarn-error.log
 # testing
 /coverage
 
-
-airbnb-app-e2e/artifacts
 audio-app-e2e/artifacts
