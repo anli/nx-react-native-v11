@@ -28,7 +28,7 @@
     "type-check": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "tsc -b",
+        "command": "tsc --noEmit",
         "cwd": "libs/shared/ui"
       }
     }

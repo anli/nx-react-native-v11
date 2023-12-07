@@ -1,7 +1,7 @@
 {
-  "name": "audio-app",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "audio-app/src",
+  "name": "storybook-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/storybook-app/src",
   "projectType": "application",
   "targets": {
     "start": {
@@ -18,7 +18,7 @@
     "serve": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "nx start audio-app"
+        "command": "nx start storybook-app"
       }
     },
     "run-ios": {
@@ -41,7 +41,7 @@
       "options": {
         "entryFile": "src/main.tsx",
         "platform": "ios",
-        "bundleOutput": "dist/audio-app/ios/main.jsbundle"
+        "bundleOutput": "dist/apps/storybook-app/ios/main.jsbundle"
       }
     },
     "run-android": {
@@ -91,7 +91,7 @@
       "options": {
         "entryFile": "src/main.tsx",
         "platform": "android",
-        "bundleOutput": "dist/audio-app/android/main.jsbundle"
+        "bundleOutput": "dist/apps/storybook-app/android/main.jsbundle"
       }
     },
     "sync-deps": {
@@ -109,24 +109,26 @@
       ],
       "options": {
         "lintFilePatterns": [
-          "audio-app/**/*.{ts,tsx,js,jsx}"
+          "apps/storybook-app/**/*.{ts,tsx,js,jsx}"
         ]
       }
     },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
+    "storybook": {
+      "executor": "@nx/react-native:storybook",
       "options": {
-        "jestConfig": "audio-app/jest.config.ts"
+        "searchDir": [
+          "apps/storybook-app/src",
+          "libs/shared/ui/src"
+        ],
+        "outputFile": "./.storybook/story-loader.js",
+        "pattern": "**/*.stories.@(js|jsx|ts|tsx|md)"
       }
     },
     "type-check": {
       "executor": "nx:run-commands",
       "options": {
         "command": "tsc --noEmit",
-        "cwd": "audio-app"
+        "cwd": "apps/storybook-app"
       }
     }
   },
