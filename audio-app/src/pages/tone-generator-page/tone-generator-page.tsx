@@ -27,13 +27,13 @@ export const ToneGeneratorPage = () => {
       />
       <SafeAreaView className="flex-1">
         <View className="py-5 px-5">
-          <Text className="text-white" type="headline-large">
+          <Text className="text-white" type="heading1">
             Tone Generator
           </Text>
         </View>
 
         <View className="flex-1 justify-center items-center">
-          <Text className="text-white" type="display-medium">
+          <Text className="text-white" type="heading2">
             {frequency.toLocaleString()} Hz
           </Text>
         </View>
