@@ -7,9 +7,6 @@ import { clsx } from 'clsx';
 import { StyledComponent } from 'nativewind';
 
 const typeConfig = {
-  'display-medium': 'text-center text-5xl font-thin',
-  'headline-large': 'text-4xl font-bold tracking-wide',
-  'body-medium': '',
   heading1: 'text-2xl font-extrabold',
   heading2: 'text-lg font-bold',
   heading3: 'text-sm font-bold',
@@ -32,7 +29,7 @@ type TextProps = NativeTextProps & {
 export const Text: FC<TextProps> = ({
   children,
   className,
-  type = 'body-medium',
+  type = 'body1',
   ...rest
 }) => {
   return (
