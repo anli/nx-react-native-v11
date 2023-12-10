@@ -1,6 +1,10 @@
 import { FC } from 'react';
-import { Text as NativeText, TextProps as NativeTextProps } from 'react-native';
+import {
+  Text as NativeText,
+  TextProps as NativeTextProps,
+} from 'react-native';
 import { clsx } from 'clsx';
+import { StyledComponent } from 'nativewind';
 
 const typeConfig = {
   'display-medium': 'text-center text-5xl font-thin',
@@ -32,8 +36,12 @@ export const Text: FC<TextProps> = ({
   ...rest
 }) => {
   return (
-    <NativeText className={clsx(typeConfig[type], className)} {...rest}>
+    <StyledComponent
+      component={NativeText}
+      className={clsx(typeConfig[type], className)}
+      {...rest}
+    >
       {children}
-    </NativeText>
+    </StyledComponent>
   );
 };
