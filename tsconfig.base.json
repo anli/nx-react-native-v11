@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-react-native/shared-ui": ["libs/shared/ui/src/index.ts"]
+      "@nx-react-native/shared-ui": ["libs/shared/ui/src/index.ts"],
+      "@nx-react-native/storybook-web": ["apps/storybook-web/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
