@@ -20,6 +20,8 @@
     "@storybook/addon-ondevice-notes": "*",
     "tailwindcss": "*",
     "nativewind": "*",
-    "@nx/react": "*"
+    "@nx/react": "*",
+    "@storybook/react": "*",
+    "@react-native-community/datetimepicker": "*"
   }
 }
