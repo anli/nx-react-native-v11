@@ -3243,6 +3243,7 @@ __metadata:
     autoprefixer: "npm:^10.4.16"
     babel-jest: "npm:^29.4.1"
     babel-plugin-react-native-web: "npm:^0.19.9"
+    chromatic: "npm:^10.1.0"
     clsx: "npm:^2.0.0"
     detox: "npm:^20.11.1"
     eslint: "npm:~8.46.0"
@@ -9101,6 +9102,17 @@ __metadata:
   version: 2.0.0
   resolution: "chownr@npm:2.0.0"
   checksum: 594754e1303672171cc04e50f6c398ae16128eb134a88f801bf5354fd96f205320f23536a045d9abd8b51024a149696e51231565891d4efdab8846021ecf88e6
+  languageName: node
+  linkType: hard
+
+"chromatic@npm:^10.1.0":
+  version: 10.1.0
+  resolution: "chromatic@npm:10.1.0"
+  bin:
+    chroma: dist/bin.js
+    chromatic: dist/bin.js
+    chromatic-cli: dist/bin.js
+  checksum: adee72f7db2df504e5ee82588c4edd5b97d38e7ff9f70819b564b2482b6419601a1bd156f10437a59ee9ce0b6f27fa5ef42624ef8883354ffa9434c8583e8acd
   languageName: node
   linkType: hard
 
