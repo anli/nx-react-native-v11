@@ -3,6 +3,19 @@ import type { StorybookConfig } from '@storybook/react-vite';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import { mergeConfig } from 'vite';
 
+const extensions = [
+  ".web.tsx",
+  ".tsx",
+  ".web.ts",
+  ".ts",
+  ".web.jsx",
+  ".jsx",
+  ".web.js",
+  ".js",
+  ".css",
+  ".json",
+];
+
 const config: StorybookConfig = {
   stories: ['../src/**/*.stories.@(js|jsx|ts|tsx|mdx)', '../../../libs/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
   addons: ['@storybook/addon-essentials',
@@ -26,10 +39,16 @@ const config: StorybookConfig = {
   viteFinal: async (config) =>
     mergeConfig(config, {
       plugins: [nxViteTsPaths()],
+      optimizeDeps: {
+        esbuildOptions: {
+          resolveExtensions: extensions,
+        },
+      },
       resolve: {
         alias: {
           'react-native': 'react-native-web',
         },
+        extensions: extensions
       },
     }),
 };

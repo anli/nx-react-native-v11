@@ -1,10 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { BoxButton } from './box-button';
 import { View } from '../../view';
+import { PlayIcon } from 'react-native-heroicons/solid';
 
 const meta: Meta<typeof BoxButton> = {
   tags: ['autodocs'],
-  component: (args) => <BoxButton {...args}>Button</BoxButton>,
+  component: ({ children, ...args }) => (
+    <BoxButton {...args}>{children}</BoxButton>
+  ),
   title: 'Design System/Buttons/Box Button',
   decorators: [
     (Story) => (
@@ -18,6 +21,7 @@ const meta: Meta<typeof BoxButton> = {
     disabled: false,
     loading: false,
     size: 'md',
+    children: 'Button',
   },
   argTypes: {
     disabled: {
@@ -81,4 +85,26 @@ export const OutlineDisabled: Story = {
     type: 'outline-primary',
     disabled: true,
   },
+};
+
+export const IconText: Story = {
+  args: {
+    type: 'solid-primary',
+    renderIcon: (props) => <PlayIcon {...props} />,
+  },
+};
+
+export const IconOnly: Story = {
+  args: {
+    type: 'solid-primary',
+    renderIcon: (props) => <PlayIcon {...props} />,
+    children: null,
+  },
+  decorators: [
+    (Story) => (
+      <View className="flex-row justify-center">
+        <Story />
+      </View>
+    ),
+  ],
 };
