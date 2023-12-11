@@ -26,5 +26,11 @@ jobs:
         uses: ./.github/actions/install-dependencies
 
       - name: Run Type Check
+        if: github.ref != 'refs/heads/main'
         run: |
           yarn type-check --base=origin/$GITHUB_BASE_REF
+
+      - name: Run Type Check
+        if: github.ref == 'refs/heads/main'
+        run: |
+          yarn type-check

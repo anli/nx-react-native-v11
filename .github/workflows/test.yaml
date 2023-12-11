@@ -19,10 +19,18 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Install Dependencies
         uses: ./.github/actions/install-dependencies
 
       - name: Run Test
+        if: github.ref != 'refs/heads/main'
         run: |
           yarn test --base=origin/$GITHUB_BASE_REF
+
+      - name: Run Test
+        if: github.ref == 'refs/heads/main'
+        run: |
+          yarn test
