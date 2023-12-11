@@ -34,7 +34,7 @@ const typeConfigs: Record<ConfigKey, ClassValue> = {
   body4: 'text-xs',
 };
 
-type TextProps = NativeTextProps & {
+export type TextProps = NativeTextProps & {
   type?: ConfigKey;
 };
 
