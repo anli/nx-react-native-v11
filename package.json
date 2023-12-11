@@ -7,7 +7,9 @@
     "start": "nx start",
     "lint": "nx affected:lint",
     "test": "nx affected:test",
-    "type-check": "nx affected --target=type-check"
+    "type-check": "nx affected --target=type-check",
+    "chromatic": "chromatic --exit-zero-on-changes",
+    "build-storybook": "nx build-storybook storybook-web --docs"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
@@ -54,6 +56,7 @@
     "autoprefixer": "^10.4.16",
     "babel-jest": "^29.4.1",
     "babel-plugin-react-native-web": "^0.19.9",
+    "chromatic": "^10.1.0",
     "detox": "^20.11.1",
     "eslint": "~8.46.0",
     "eslint-config-prettier": "^9.0.0",

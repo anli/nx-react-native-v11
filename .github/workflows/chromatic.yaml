@@ -1,4 +1,4 @@
-name: Lint
+name: Chromatic
 
 on:
   merge_group:
@@ -14,15 +14,19 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  lint:
+  chromatic:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Install Dependencies
         uses: ./.github/actions/install-dependencies
 
-      - name: Run lint
-        run: |
-          yarn lint --base=origin/$GITHUB_BASE_REF
+      - name: Publish to Chromatic
+        uses: chromaui/action@latest
+        with:
+          # ⚠️ Make sure to configure a `CHROMATIC_PROJECT_TOKEN` repository secret
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
