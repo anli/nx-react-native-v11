@@ -1,12 +1,24 @@
 import { FC } from 'react';
-import {
-  Text as NativeText,
-  TextProps as NativeTextProps,
-} from 'react-native';
-import { clsx } from 'clsx';
+import { Text as NativeText, TextProps as NativeTextProps } from 'react-native';
+import { ClassValue, clsx } from 'clsx';
 import { StyledComponent } from 'nativewind';
 
-const typeConfig = {
+type ConfigKey =
+  | 'heading1'
+  | 'heading2'
+  | 'heading3'
+  | 'heading4'
+  | 'title1'
+  | 'title2'
+  | 'title3'
+  | 'title4'
+  | 'title5'
+  | 'body1'
+  | 'body2'
+  | 'body3'
+  | 'body4';
+
+const typeConfigs: Record<ConfigKey, ClassValue> = {
   heading1: 'text-2xl font-extrabold',
   heading2: 'text-lg font-bold',
   heading3: 'text-sm font-bold',
@@ -23,7 +35,7 @@ const typeConfig = {
 };
 
 type TextProps = NativeTextProps & {
-  type?: keyof typeof typeConfig;
+  type?: ConfigKey;
 };
 
 export const Text: FC<TextProps> = ({
@@ -35,7 +47,7 @@ export const Text: FC<TextProps> = ({
   return (
     <StyledComponent
       component={NativeText}
-      className={clsx(typeConfig[type], className)}
+      className={clsx(typeConfigs[type], className)}
       {...rest}
     >
       {children}
