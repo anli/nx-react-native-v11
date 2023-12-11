@@ -13,8 +13,17 @@ const meta: Meta<typeof BoxButton> = {
       </View>
     ),
   ],
+  args: {
+    type: 'solid-primary',
+    disabled: false,
+    loading: false,
+    size: 'md',
+  },
   argTypes: {
     disabled: {
+      control: 'boolean',
+    },
+    loading: {
       control: 'boolean',
     },
     type: {
@@ -25,6 +34,10 @@ const meta: Meta<typeof BoxButton> = {
         'outline-primary',
         'outline-secondary',
       ],
+    },
+    size: {
+      control: 'radio',
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
     },
   },
 };
