@@ -22,7 +22,7 @@ const typeConfigs: Record<ConfigKey, ClassValue> = {
   heading1: 'text-2xl font-extrabold',
   heading2: 'text-lg font-bold',
   heading3: 'text-sm font-bold',
-  heading4: 'text-[13px]',
+  heading4: 'text-[13px] font-bold',
   title1: 'text-[23px] font-bold',
   title2: 'text-[19px] font-bold',
   title3: 'text-base font-semibold',
