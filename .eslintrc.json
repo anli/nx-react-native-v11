@@ -32,5 +32,8 @@
       "extends": ["plugin:@nx/javascript"],
       "rules": {}
     }
-  ]
+  ],
+  "settings": {
+    "import/ignore": ["node_modules/react-native/index\\.js$"]
+  }
 }

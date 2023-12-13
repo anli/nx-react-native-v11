@@ -1,7 +1,6 @@
 import clsx, { ClassValue } from 'clsx';
 import { Text } from '../../text';
 import { View } from '../../view';
-import { Platform } from 'react-native';
 
 type TypeConfigKey = 'primary' | 'danger';
 
@@ -32,18 +31,9 @@ export const BadgeNumber = ({ value, type = 'primary' }: BadgeNumberProps) => {
   const typeConfig = typeConfigs[type];
 
   return (
-    <View className="self-start rounded-full p-1 bg-white">
-      <View
-        className={clsx(
-          'rounded-full',
-          Platform.select({
-            android: 'py-0.5 px-2.5',
-            default: 'py-1 px-2.5',
-          }),
-          typeConfig.container
-        )}
-      >
-        <Text type="title2" className={clsx(typeConfig.text)}>
+    <View className="self-start rounded-full p-0.5 bg-white">
+      <View className={clsx('rounded-full px-1.5', typeConfig.container)}>
+        <Text type="body4" className={clsx(typeConfig.text)}>
           {text}
         </Text>
       </View>
