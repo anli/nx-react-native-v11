@@ -4,7 +4,7 @@ import { Text } from './text';
 const meta: Meta<typeof Text> = {
   tags: ['autodocs'],
   component: (args) => <Text {...args}>Text</Text>,
-  title: 'Design System/Text',
+  title: 'Common Component/Text',
 };
 export default meta;
 type Story = StoryObj<typeof Text>;

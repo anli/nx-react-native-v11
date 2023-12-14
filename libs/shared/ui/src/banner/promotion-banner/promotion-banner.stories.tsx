@@ -6,7 +6,7 @@ import { BoltIcon } from 'react-native-heroicons/solid';
 const meta: Meta<typeof PromotionBanner> = {
   tags: ['autodocs'],
   component: (args) => <PromotionBanner {...args} />,
-  title: 'Design System/Banner/Promotion Banner',
+  title: 'Common Component/Banner/Promotion Banner',
   decorators: [
     (Story) => (
       <View className="m-4">

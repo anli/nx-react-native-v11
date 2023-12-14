@@ -7,7 +7,7 @@ import { View } from '../view';
 const meta: Meta<typeof BottomNavigationButton> = {
   tags: ['autodocs'],
   component: (args) => <BottomNavigationButton {...args} />,
-  title: 'Design System/Bottom Navigation',
+  title: 'Common Component/Bottom Navigation',
   args: {
     title: 'Chats',
     renderIcon: (props) => <ChatBubbleOvalLeftEllipsisIcon {...props} />,

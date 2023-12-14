@@ -8,6 +8,7 @@ require('libs/shared/ui/src/badge/badge-number/badge-number.stories.tsx'),
 require('libs/shared/ui/src/banner/promotion-banner/promotion-banner.stories.tsx'),
 require('libs/shared/ui/src/bottom-navigation/bottom-navigation.stories.tsx'),
 require('libs/shared/ui/src/button/box-button/box-button.stories.tsx'),
+require('libs/shared/ui/src/chip/action-chip/action-chip.stories.tsx'),
 require('libs/shared/ui/src/text/text.stories.tsx')
   ];
 }

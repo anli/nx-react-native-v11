@@ -5,7 +5,7 @@ import { BadgeNumber } from '.';
 const meta: Meta<typeof BadgeNumber> = {
   tags: ['autodocs'],
   component: (args) => <BadgeNumber {...args} />,
-  title: 'Design System/Badge/Number Badge',
+  title: 'Common Component/Badge/Number Badge',
   decorators: [
     (Story) => (
       <View className="m-4 p-4 self-start bg-slate-300">
