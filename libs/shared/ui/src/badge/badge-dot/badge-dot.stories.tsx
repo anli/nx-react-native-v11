@@ -5,7 +5,7 @@ import { BadgeDot } from './badge-dot';
 const meta: Meta<typeof BadgeDot> = {
   tags: ['autodocs'],
   component: (args) => <BadgeDot {...args} />,
-  title: 'Design System/Badge/Dot Badge',
+  title: 'Common Component/Badge/Dot Badge',
   decorators: [
     (Story) => (
       <View className="m-4">

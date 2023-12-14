@@ -5,7 +5,7 @@ import { BadgeNew } from './badge-new';
 const meta: Meta<typeof BadgeNew> = {
   tags: ['autodocs'],
   component: (args) => <BadgeNew {...args} />,
-  title: 'Design System/Badge/New Badge',
+  title: 'Common Component/Badge/New Badge',
   decorators: [
     (Story) => (
       <View className="m-4">

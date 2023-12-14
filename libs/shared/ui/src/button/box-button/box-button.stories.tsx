@@ -8,7 +8,7 @@ const meta: Meta<typeof BoxButton> = {
   component: ({ children, ...args }) => (
     <BoxButton {...args}>{children}</BoxButton>
   ),
-  title: 'Design System/Buttons/Box Button',
+  title: 'Common Component/Buttons/Box Button',
   decorators: [
     (Story) => (
       <View className="m-4">
