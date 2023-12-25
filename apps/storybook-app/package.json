@@ -22,6 +22,7 @@
     "nativewind": "*",
     "@nx/react": "*",
     "@storybook/react": "*",
-    "@react-native-community/datetimepicker": "*"
+    "@react-native-community/datetimepicker": "*",
+    "@react-native-community/slider": "*"
   }
 }
