@@ -50,6 +50,7 @@ const config: StorybookConfig = {
         },
         extensions: extensions
       },
+      assetsInclude: ["/sb-preview/runtime.js"], // Bug workaround, see https://github.com/storybookjs/storybook/issues/25256      
     }),
 };
 
