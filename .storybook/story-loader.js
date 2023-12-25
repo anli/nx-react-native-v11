@@ -14,6 +14,7 @@ require('libs/shared/ui/src/chip/action-chip/action-chip.stories.tsx'),
 require('libs/shared/ui/src/chip/choice-chip/choice-chip.stories.tsx'),
 require('libs/shared/ui/src/chip/filter-chip/filter-chip.stories.tsx'),
 require('libs/shared/ui/src/radio-button/radio-button.stories.tsx'),
+require('libs/shared/ui/src/switch/switch.stories.tsx'),
 require('libs/shared/ui/src/text/text.stories.tsx')
   ];
 }
