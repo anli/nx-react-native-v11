@@ -2,8 +2,9 @@ import clsx from 'clsx';
 import { Text } from '../../text';
 import { View } from '../../view';
 import { Platform } from 'react-native';
+import { FC } from 'react';
 
-export const BadgeNew = () => {
+export const BadgeNew: FC = () => {
   return (
     <View
       className={clsx(

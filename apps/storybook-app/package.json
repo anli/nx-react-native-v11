@@ -23,6 +23,10 @@
     "@nx/react": "*",
     "@storybook/react": "*",
     "@react-native-community/datetimepicker": "*",
-    "@react-native-community/slider": "*"
+    "@react-native-community/slider": "*",
+    "react-native-linear-gradient": "*",
+    "clsx": "*",
+    "react-native-heroicons": "*",
+    "@gorhom/portal": "*"
   }
 }

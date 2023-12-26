@@ -1,3 +1,2 @@
-import { BackgroundLinearGradient } from "./background-linear-gradient";
+export { BackgroundLinearGradient as Background } from "./background-linear-gradient";
 
-export const Background = BackgroundLinearGradient

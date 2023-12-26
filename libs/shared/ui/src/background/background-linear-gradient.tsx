@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { ColorValue, StatusBar, StatusBarProps } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-type BackgroundLinearGradientProps = StatusBarProps & {
+export type BackgroundLinearGradientProps = StatusBarProps & {
   startColor: ColorValue;
   endColor: ColorValue;
 };
