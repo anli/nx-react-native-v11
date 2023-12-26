@@ -1,5 +1,6 @@
 import clsx, { ClassValue } from 'clsx';
 import { View } from '../../view';
+import { FC } from 'react';
 
 type TypeConfigKey = 'primary' | 'danger';
 
@@ -21,7 +22,7 @@ type BadgeDotProps = {
   type?: TypeConfigKey;
 };
 
-export const BadgeDot = ({ type = 'primary' }: BadgeDotProps) => {
+export const BadgeDot: FC<BadgeDotProps> = ({ type = 'primary' }) => {
   const typeConfig = typeConfigs[type];
 
   return (

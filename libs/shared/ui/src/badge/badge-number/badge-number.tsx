@@ -1,6 +1,7 @@
 import clsx, { ClassValue } from 'clsx';
 import { Text } from '../../text';
 import { View } from '../../view';
+import { FC } from 'react';
 
 type TypeConfigKey = 'primary' | 'danger';
 
@@ -26,7 +27,10 @@ type BadgeNumberProps = {
   type?: TypeConfigKey;
 };
 
-export const BadgeNumber = ({ value, type = 'primary' }: BadgeNumberProps) => {
+export const BadgeNumber: FC<BadgeNumberProps> = ({
+  value,
+  type = 'primary',
+}) => {
   const text = value > 999 ? '999+' : value;
   const typeConfig = typeConfigs[type];
 
