@@ -27,7 +27,7 @@ export const BadgeDot: FC<BadgeDotProps> = ({ type = 'primary' }) => {
 
   return (
     <View
-      className={clsx('self-start rounded-full p-1.5', typeConfig.container)}
+      className={clsx('self-start rounded-full p-1', typeConfig.container)}
     />
   );
 };
