@@ -7,6 +7,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
       {children}
       <PortalHost name="snackbar" />
       <PortalHost name="toast" />
+      <PortalHost name="popup" />
     </PortalProvider>
   );
 };

@@ -10,7 +10,8 @@ type TypeConfigKey =
   | 'solid-primary'
   | 'solid-danger'
   | 'outline-primary'
-  | 'outline-secondary';
+  | 'outline-secondary'
+  | 'plain';
 
 type TypeConfigs = Record<
   TypeConfigKey,
@@ -33,12 +34,17 @@ const enabledConfigs: TypeConfigs = {
     iconColor: 'white',
   },
   'outline-primary': {
-    container: 'border-solid border-2 border-green-500',
+    container: 'border-solid border border-green-500',
     text: 'text-green-500',
     iconColor: 'gray',
   },
   'outline-secondary': {
-    container: 'border-solid border-2 border-gray-300',
+    container: 'border-solid border border-gray-300',
+    text: 'text-black',
+    iconColor: 'gray',
+  },
+  plain: {
+    container: '',
     text: 'text-black',
     iconColor: 'gray',
   },
@@ -56,12 +62,17 @@ const disabledConfigs: TypeConfigs = {
     iconColor: 'white',
   },
   'outline-primary': {
-    container: 'border-solid border-2 bg-white border-gray-300',
+    container: 'border-solid border bg-white border-gray-300',
     text: 'text-gray-300',
     iconColor: 'gray',
   },
   'outline-secondary': {
-    container: 'border-solid border-2 bg-white border-gray-300',
+    container: 'border-solid border bg-white border-gray-300',
+    text: 'text-gray-300',
+    iconColor: 'gray',
+  },
+  plain: {
+    container: '',
     text: 'text-gray-300',
     iconColor: 'gray',
   },
@@ -106,7 +117,7 @@ const sizeConfigs: SizeConfigs = {
   },
 };
 
-type BoxButtonProps = PressableProps &
+export type BoxButtonProps = PressableProps &
   Pick<TextProps, 'children'> & {
     type?: TypeConfigKey;
     size?: SizeConfigKey;
