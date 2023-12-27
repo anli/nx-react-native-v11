@@ -27,6 +27,7 @@
     "react-native-linear-gradient": "*",
     "clsx": "*",
     "react-native-heroicons": "*",
-    "@gorhom/portal": "*"
+    "@gorhom/portal": "*",
+    "react-native-page-indicator": "*"
   }
 }

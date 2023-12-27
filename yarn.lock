@@ -3191,6 +3191,7 @@ __metadata:
     react-native-gesture-handler: "npm:^2.14.0"
     react-native-heroicons: "npm:^3.2.1"
     react-native-linear-gradient: "npm:^2.8.3"
+    react-native-page-indicator: "npm:^2.2.1"
     react-native-reanimated: "npm:^3.6.1"
     react-native-safe-area-context: "npm:^4.8.2"
     react-native-screens: "npm:^3.29.0"
@@ -17887,6 +17888,16 @@ __metadata:
   dependencies:
     prop-types: "npm:^15.5.10"
   checksum: 651c6b6b0f1c2d82e372f3188ad5a8eb478728135a05b1c97315646f4fdbee446a0dd5bc8f79a96e7ab379a08c0a04bcdb2911f7dcf3bb6511f0cced7d55f0f0
+  languageName: node
+  linkType: hard
+
+"react-native-page-indicator@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "react-native-page-indicator@npm:2.2.1"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: b80247ba1088cf4b139802ba393dcad12603d31aa034b54a4991c76e1d8c17ea8325eeb85f450c8370d1289a65e9dea82ef808eb7337bc852ba38c3e5fd8ef11
   languageName: node
   linkType: hard
 
