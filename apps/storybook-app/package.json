@@ -28,6 +28,7 @@
     "clsx": "*",
     "react-native-heroicons": "*",
     "@gorhom/portal": "*",
-    "react-native-page-indicator": "*"
+    "react-native-page-indicator": "*",
+    "react-native-progress": "*"
   }
 }
