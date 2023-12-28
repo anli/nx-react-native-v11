@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Text } from '../text';
 import { View } from '../view';
 import clsx from 'clsx';
-import { ActivityIndicator } from '../activity-indicator';
+import { Spinner } from '../spinner';
 import { NumberProp, SvgProps } from 'react-native-svg';
 
 type ToastProps = {
@@ -28,7 +28,7 @@ export const Toast: FC<ToastProps> = ({
     >
       {hasHeader && (
         <View className="items-center justify-center">
-          {loading && <ActivityIndicator size="large" color="white" />}
+          {loading && <Spinner size="xl" color="white" />}
           {!loading && renderIcon?.({ size: 45, color: 'white' })}
         </View>
       )}
