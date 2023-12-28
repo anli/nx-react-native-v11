@@ -29,6 +29,8 @@
     "react-native-heroicons": "*",
     "@gorhom/portal": "*",
     "react-native-page-indicator": "*",
-    "react-native-progress": "*"
+    "react-native-progress": "*",
+    "react-native-tab-view": "*",
+    "react-native-pager-view": "*"
   }
 }
