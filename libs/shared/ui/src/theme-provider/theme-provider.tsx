@@ -8,6 +8,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
       <PortalHost name="snackbar" />
       <PortalHost name="toast" />
       <PortalHost name="popup" />
+      <PortalHost name="progress-linear" />
     </PortalProvider>
   );
 };

@@ -1,0 +1,32 @@
+diff --git a/node_modules/react-native-progress/Bar.js b/node_modules/react-native-progress/Bar.jsx
+similarity index 100%
+rename from node_modules/react-native-progress/Bar.js
+rename to node_modules/react-native-progress/Bar.jsx
+diff --git a/node_modules/react-native-progress/Circle.js b/node_modules/react-native-progress/Circle.jsx
+similarity index 100%
+rename from node_modules/react-native-progress/Circle.js
+rename to node_modules/react-native-progress/Circle.jsx
+diff --git a/node_modules/react-native-progress/CircleSnail.js b/node_modules/react-native-progress/CircleSnail.jsx
+similarity index 100%
+rename from node_modules/react-native-progress/CircleSnail.js
+rename to node_modules/react-native-progress/CircleSnail.jsx
+diff --git a/node_modules/react-native-progress/Pie.js b/node_modules/react-native-progress/Pie.jsx
+similarity index 100%
+rename from node_modules/react-native-progress/Pie.js
+rename to node_modules/react-native-progress/Pie.jsx
+diff --git a/node_modules/react-native-progress/Shapes/Arc.js b/node_modules/react-native-progress/Shapes/Arc.jsx
+similarity index 100%
+rename from node_modules/react-native-progress/Shapes/Arc.js
+rename to node_modules/react-native-progress/Shapes/Arc.jsx
+diff --git a/node_modules/react-native-progress/Shapes/Circle.js b/node_modules/react-native-progress/Shapes/Circle.jsx
+similarity index 100%
+rename from node_modules/react-native-progress/Shapes/Circle.js
+rename to node_modules/react-native-progress/Shapes/Circle.jsx
+diff --git a/node_modules/react-native-progress/Shapes/Sector.js b/node_modules/react-native-progress/Shapes/Sector.jsx
+similarity index 100%
+rename from node_modules/react-native-progress/Shapes/Sector.js
+rename to node_modules/react-native-progress/Shapes/Sector.jsx
+diff --git a/node_modules/react-native-progress/withAnimation.js b/node_modules/react-native-progress/withAnimation.jsx
+similarity index 100%
+rename from node_modules/react-native-progress/withAnimation.js
+rename to node_modules/react-native-progress/withAnimation.jsx
