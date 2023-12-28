@@ -24,6 +24,7 @@ require('libs/shared/ui/src/radio-button/radio-button.stories.tsx'),
 require('libs/shared/ui/src/search-bar/search-bar.stories.tsx'),
 require('libs/shared/ui/src/slider/slider.stories.tsx'),
 require('libs/shared/ui/src/snackbar/snackbar.stories.tsx'),
+require('libs/shared/ui/src/spinner/spinner.stories.tsx'),
 require('libs/shared/ui/src/switch/switch.stories.tsx'),
 require('libs/shared/ui/src/text/text.stories.tsx'),
 require('libs/shared/ui/src/toast/toast.stories.tsx')

@@ -3,7 +3,7 @@ import { FC } from 'react';
 import clsx, { ClassValue } from 'clsx';
 import { ColorValue, PressableProps } from 'react-native';
 import { Pressable } from '../../pressable';
-import { ActivityIndicator } from '../../activity-indicator';
+import { Spinner } from '../../spinner';
 import type { NumberProp, SvgProps } from 'react-native-svg';
 
 type TypeConfigKey =
@@ -155,7 +155,7 @@ export const BoxButton: FC<BoxButtonProps> = ({
       disabled={disabled}
       {...rest}
     >
-      {loading && <ActivityIndicator color={typeConfig?.iconColor} />}
+      {loading && <Spinner color={typeConfig?.iconColor as string} />}
       {showContent && (
         <>
           {Icon}
