@@ -10,12 +10,14 @@ type CheckboxProps = {
   disabled?: boolean;
   value?: boolean;
   onChange?: (value: boolean) => void;
+  hint?: boolean;
 };
 
 export const Checkbox: FC<CheckboxProps> = ({
   disabled,
   value = false,
   onChange,
+  hint = false,
 }) => {
   const [componentValue, setComponentValue] = useState(value);
 
@@ -43,11 +45,12 @@ export const Checkbox: FC<CheckboxProps> = ({
       disabled={disabled}
       onPress={handlePress}
     >
-      <CheckIcon
-        fill={componentValue ? 'fill-white' : 'fill-gray-300'}
-        stroke={componentValue ? 'stroke-white' : 'stroke-gray-300'}
-        size={20}
-      />
+      {componentValue && (
+        <CheckIcon fill="fill-white" stroke="stroke-white" size={20} />
+      )}
+      {!componentValue && hint && (
+        <CheckIcon fill="fill-gray-300" stroke="stroke-gray-300" size={20} />
+      )}
     </Pressable>
   );
 };
