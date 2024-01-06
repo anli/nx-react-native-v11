@@ -26,6 +26,7 @@
     "@react-native-community/slider": "*",
     "react-native-tab-view": "*",
     "@gorhom/portal": "*",
-    "@react-navigation/bottom-tabs": "*"
+    "@react-navigation/bottom-tabs": "*",
+    "babel-plugin-module-resolver": "*"
   }
 }
