@@ -95,6 +95,7 @@
     "@gorhom/portal": "^1.0.14",
     "@react-native-community/datetimepicker": "^7.6.2",
     "@react-native-community/slider": "^4.5.0",
+    "@react-navigation/bottom-tabs": "^6.5.11",
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",
     "@storybook/react": "^7.6.6",
