@@ -7,7 +7,12 @@
     "moduleResolution": "node",
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "declaration": true
+    "declaration": true,
+    "baseUrl": "../../",
+    "paths": {
+      "@nx-react-native/shared-ui": ["libs/shared/ui/src/index.ts"],
+      "@pages": ["apps/board-game-app/src/pages"]
+    }
   },
   "files": [],
   "include": [],
