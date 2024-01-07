@@ -3165,6 +3165,7 @@ __metadata:
     babel-plugin-react-native-web: "npm:^0.19.9"
     chromatic: "npm:^10.2.0"
     clsx: "npm:^2.0.0"
+    date-fns: "npm:^3.1.0"
     detox: "npm:^20.14.5"
     eslint: "npm:8.56.0"
     eslint-config-prettier: "npm:^9.1.0"
@@ -10035,6 +10036,13 @@ __metadata:
     whatwg-mimetype: "npm:^3.0.0"
     whatwg-url: "npm:^11.0.0"
   checksum: 051c3aaaf3e961904f136aab095fcf6dff4db23a7fc759dd8ba7b3e6ba03fc07ef608086caad8ab910d864bd3b5e57d0d2f544725653d77c96a2c971567045f4
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "date-fns@npm:3.1.0"
+  checksum: 60ded37aff397077780bf7b4e545b85041ee97e2acb24ffb99b84dcd8cf64d1c360d1f7bbf7e811840bb8df4f054508fa3dfb438f9e1558ddf5fe7645f4bdbf9
   languageName: node
   linkType: hard
 

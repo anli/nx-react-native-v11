@@ -10,7 +10,8 @@ import { useWindowDimensions } from 'react-native';
 import { Text } from '../text';
 import clsx from 'clsx';
 
-const tabMargin = 24;
+const tabMargin = 32;
+const tabsPadding = 2;
 
 type Route = {
   key: string;
@@ -50,10 +51,10 @@ export const Tabs: FC<TabsProps> = ({
               return <TabBarIndicator {...props} width={width} />;
             }}
             indicatorStyle={{ backgroundColor: 'black' }}
-            style={{ backgroundColor: 'white' }}
+            style={{ backgroundColor: 'white', paddingHorizontal: tabsPadding }}
             tabStyle={{ ...(fixed ? undefined : { width: 'auto' }) }}
             indicatorContainerStyle={{
-              left: tabMargin / 2,
+              left: tabMargin / 2 + tabsPadding,
             }}
             contentContainerStyle={{ justifyContent: 'center' }}
             scrollEnabled={!fixed}

@@ -30,6 +30,7 @@ export const App = () => {
     <ThemeProvider>
       <NavigationContainer>
         <Tab.Navigator
+          initialRouteName="StatsTab"
           screenOptions={screenOptions}
           tabBar={(props) => (
             <BottomNavigation {...props} iconConfigs={iconConfigs} />

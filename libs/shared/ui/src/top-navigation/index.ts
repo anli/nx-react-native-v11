@@ -1,1 +1,1 @@
-export * from './top-navigation-emphasize'
+export * from './top-navigation'
