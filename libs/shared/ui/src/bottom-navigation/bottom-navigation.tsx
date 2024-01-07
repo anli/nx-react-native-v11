@@ -5,7 +5,7 @@ import { FC } from 'react';
 import { BottomNavigationButton } from './bottom-navigation-button';
 import { Icon, type IconProps } from '../icon';
 
-type BottomNavigationProps = BottomTabBarProps & {
+export type BottomNavigationProps = BottomTabBarProps & {
   iconConfigs: Record<string, IconProps>;
 };
 
@@ -18,7 +18,10 @@ export const BottomNavigation: FC<BottomNavigationProps> = ({
   const { bottom } = useSafeAreaInsets();
 
   return (
-    <View className="flex-row android:mb-1" style={{ paddingBottom: bottom }}>
+    <View
+      className="flex-row android:mb-1 border-t border-gray-200"
+      style={{ paddingBottom: bottom }}
+    >
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
         const isFocused = state.index === index;

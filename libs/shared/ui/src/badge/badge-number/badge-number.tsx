@@ -22,22 +22,34 @@ const typeConfigs: Record<
   },
 };
 
+type Format = 'none' | 'percentage';
+
+const getFormattedText = (value: BadgeNumberProps['value'], format: Format) => {
+  if (format === 'percentage') {
+    return value * 100 + '%';
+  }
+
+  return value > 999 ? '999+' : value;
+};
+
 type BadgeNumberProps = {
   value: number;
   type?: TypeConfigKey;
+  format?: Format;
 };
 
 export const BadgeNumber: FC<BadgeNumberProps> = ({
   value,
   type = 'primary',
+  format = 'none',
 }) => {
-  const text = value > 999 ? '999+' : value;
+  const text = getFormattedText(value, format);
   const typeConfig = typeConfigs[type];
 
   return (
-    <View className="self-start rounded-full p-0.5 bg-white">
+    <View className="self-center rounded-full p-0.5 bg-white">
       <View className={clsx('rounded-full px-1.5', typeConfig.container)}>
-        <Text type="body4" className={clsx(typeConfig.text)}>
+        <Text type="title5" className={clsx(typeConfig.text)}>
           {text}
         </Text>
       </View>

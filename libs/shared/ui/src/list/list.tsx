@@ -12,22 +12,25 @@ type ListItemProps = PressableProps & {
   title: string;
   description?: string;
   RightComponent?: JSX.Element;
+  LeftComponent?: JSX.Element;
 };
 
 const ListItem: FC<ListItemProps> = ({
   title,
   description,
   RightComponent,
+  LeftComponent,
   ...rest
 }) => {
   return (
     <Pressable
-      className="bg-white p-5 flex-row items-center active:opacity-50"
+      className="bg-white px-4 py-2 flex-row active:opacity-50"
       style={{ gap: 16 }}
       {...rest}
     >
+      {LeftComponent}
       <View className="flex-1">
-        <Text type="title2">{title}</Text>
+        <Text type="title5">{title}</Text>
         <Text type="body2" className="text-gray-500">
           {description}
         </Text>

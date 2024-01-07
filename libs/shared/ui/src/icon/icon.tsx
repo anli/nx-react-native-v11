@@ -10,9 +10,9 @@ export type IconProps = SvgProps & {
 };
 
 export const Icon: FC<IconProps> = ({
-  type = 'outline',
+  type = 'solid',
   name,
-  size,
+  size = 20,
   ...props
 }) => {
   switch (type) {

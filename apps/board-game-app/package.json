@@ -28,6 +28,7 @@
     "@gorhom/portal": "*",
     "@react-navigation/bottom-tabs": "*",
     "babel-plugin-module-resolver": "*",
-    "@nx/react": "*"
+    "@nx/react": "*",
+    "react-native-pager-view": "*"
   }
 }

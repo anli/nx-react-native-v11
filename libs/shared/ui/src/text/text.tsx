@@ -47,7 +47,7 @@ export const Text: FC<TextProps> = ({
   return (
     <StyledComponent
       component={NativeText}
-      className={clsx(typeConfigs[type], className)}
+      className={clsx('text-black', typeConfigs[type], className)}
       {...rest}
     >
       {children}
