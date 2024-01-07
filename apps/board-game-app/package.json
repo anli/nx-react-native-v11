@@ -27,6 +27,7 @@
     "react-native-tab-view": "*",
     "@gorhom/portal": "*",
     "@react-navigation/bottom-tabs": "*",
-    "babel-plugin-module-resolver": "*"
+    "babel-plugin-module-resolver": "*",
+    "@nx/react": "*"
   }
 }

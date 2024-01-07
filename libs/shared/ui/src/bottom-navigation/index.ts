@@ -1,1 +1,1 @@
-export * from './bottom-navigation-button'
+export * from './bottom-navigation'

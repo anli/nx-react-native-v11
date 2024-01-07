@@ -11,5 +11,11 @@
     "src/**/*.spec.tsx",
     "test-setup.ts"
   ],
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "app.d.ts"
+  ]
 }
