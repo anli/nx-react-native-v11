@@ -29,6 +29,7 @@
     "@react-navigation/bottom-tabs": "*",
     "babel-plugin-module-resolver": "*",
     "@nx/react": "*",
-    "react-native-pager-view": "*"
+    "react-native-pager-view": "*",
+    "date-fns": "*"
   }
 }

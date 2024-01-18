@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StatsPage } from '@pages';
+import { PlaysPage, StatsPage } from '@pages';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
   BottomNavigation,
@@ -25,12 +25,20 @@ const StatsTab = () => {
   );
 };
 
+const PlaysTab = () => {
+  return (
+    <Stack.Navigator screenOptions={screenOptions}>
+      <Stack.Screen name="PlaysPage" component={PlaysPage} />
+    </Stack.Navigator>
+  );
+};
+
 export const App = () => {
   return (
     <ThemeProvider>
       <NavigationContainer>
         <Tab.Navigator
-          initialRouteName="StatsTab"
+          initialRouteName="PlaysTab"
           screenOptions={screenOptions}
           tabBar={(props) => (
             <BottomNavigation {...props} iconConfigs={iconConfigs} />
@@ -38,7 +46,7 @@ export const App = () => {
         >
           <Tab.Screen
             name="PlaysTab"
-            component={StatsTab}
+            component={PlaysTab}
             options={{
               title: 'Plays',
             }}
