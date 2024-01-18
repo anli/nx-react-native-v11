@@ -24,7 +24,7 @@ export const SearchBar: FC<SearchBarProps> = ({
 
   return (
     <View
-      className="bg-white py-2 px-5 flex-row items-center"
+      className="bg-white py-2 px-4 flex-row items-center"
       style={{ gap: 8 }}
     >
       {onBack && <ChevronLeftIcon color="black" size={24} onPress={onBack} />}
