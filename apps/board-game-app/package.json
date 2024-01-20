@@ -30,6 +30,7 @@
     "babel-plugin-module-resolver": "*",
     "@nx/react": "*",
     "react-native-pager-view": "*",
-    "date-fns": "*"
+    "date-fns": "*",
+    "fast-xml-parser": "*"
   }
 }

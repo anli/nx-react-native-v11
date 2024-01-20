@@ -7,7 +7,9 @@
       {
         "root": ["."],
         "alias": {
-          "@pages": "./src/pages"
+          "@pages": "./src/pages",
+          "@entities": "./src/entities",
+          "@widgets": "./src/widgets"
         }
       }
     ]
