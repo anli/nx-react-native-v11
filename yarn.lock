@@ -3178,6 +3178,7 @@ __metadata:
     jest-circus: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     jest-react-native: "npm:18.0.0"
+    lodash.debounce: "npm:^4.0.8"
     metro: "npm:0.76.8"
     metro-babel-register: "npm:0.76.8"
     metro-config: "npm:0.76.8"

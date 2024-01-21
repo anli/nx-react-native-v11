@@ -9,7 +9,8 @@
         "alias": {
           "@pages": "./src/pages",
           "@entities": "./src/entities",
-          "@widgets": "./src/widgets"
+          "@widgets": "./src/widgets",
+          "@shared": "./src/shared"
         }
       }
     ]

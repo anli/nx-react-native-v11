@@ -103,6 +103,7 @@
     "clsx": "^2.0.0",
     "date-fns": "^3.1.0",
     "fast-xml-parser": "^4.3.3",
+    "lodash.debounce": "^4.0.8",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
     "react-dom": "18.2.0",

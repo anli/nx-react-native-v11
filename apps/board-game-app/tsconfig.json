@@ -13,7 +13,8 @@
       "@nx-react-native/shared-ui": ["libs/shared/ui/src/index.ts"],
       "@pages": ["apps/board-game-app/src/pages"],
       "@entities": ["apps/board-game-app/src/entities"],
-      "@widgets": ["apps/board-game-app/src/widgets"]
+      "@widgets": ["apps/board-game-app/src/widgets"],
+      "@shared": ["apps/board-game-app/src/shared"]
     }
   },
   "files": [],
