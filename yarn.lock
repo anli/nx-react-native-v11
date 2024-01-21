@@ -3194,6 +3194,7 @@ __metadata:
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
     react-native: "npm:0.72.6"
+    react-native-date-picker: "npm:^4.3.5"
     react-native-frequency: "npm:^2.2.0"
     react-native-gesture-handler: "npm:^2.14.0"
     react-native-heroicons: "npm:^3.2.1"
@@ -18030,6 +18031,16 @@ __metadata:
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 2bdb6b93fbb1820b024b496042cce405c57e2f85e777c9aabd55f9b26d145408f9f74f5934676ffdc46f3dcff656d78413a6e43968e7b3f92eea35b3052e9053
+  languageName: node
+  linkType: hard
+
+"react-native-date-picker@npm:^4.3.5":
+  version: 4.3.5
+  resolution: "react-native-date-picker@npm:4.3.5"
+  peerDependencies:
+    react: ">= 17.0.1"
+    react-native: ">= 0.64.3"
+  checksum: 8b0755609e1d87fd376209c9dec9faa8f4d7e62d38f9ca244e7583004cc9fb0c0d78e949875de1e1ae6a9b3a7d487a6cef0f4ad59709e3aaffc47baeecbc090d
   languageName: node
   linkType: hard
 
