@@ -12,6 +12,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { BackNavigationButton } from '@shared';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { useGameOne } from '@entities';
+import DatePicker from 'react-native-date-picker';
+import { useState } from 'react';
+import { format, startOfDay } from 'date-fns';
 
 const players = [
   {
@@ -37,9 +40,11 @@ const players = [
 ];
 
 export const PlayCreatePage = () => {
-  const { canGoBack, goBack, navigate } = useNavigation();
-  const { params } = useRoute<ReactNavigation.RouteProps<'PlayCreatePage'>>();
-  const { data } = useGameOne(params?.gameId);
+  const { canGoBack, goBack, navigate, setParams } = useNavigation();
+  const { params: { gameId, date } = {} } =
+    useRoute<ReactNavigation.RouteProps<'PlayCreatePage'>>();
+  const { data: gameData } = useGameOne(gameId);
+  const [isDatePickerVisible, setIsDatePickerVisible] = useState(false);
 
   const handleSave = () => {
     canGoBack() && goBack();
@@ -48,6 +53,14 @@ export const PlayCreatePage = () => {
   const handleGameSelect = () => {
     navigate('GameSelectPage');
   };
+
+  const handleDatePickerChangeValue = (date: Date) => {
+    setIsDatePickerVisible(false);
+    setParams({ date: startOfDay(date).toISOString() });
+  };
+
+  const handleDatePickerToggle = () =>
+    setIsDatePickerVisible((_visible) => !_visible);
 
   return (
     <View className="bg-white flex-1">
@@ -61,10 +74,10 @@ export const PlayCreatePage = () => {
         <View className="flex-1">
           <ListHeader title="Game" />
           <View className="px-4 py-2 flex-row flex-wrap" style={{ gap: 12 }}>
-            {params.gameId && data ? (
+            {gameId && gameData ? (
               <ActionChip
-                title={data.name}
-                imagePath={data.thumbnail}
+                title={gameData.name}
+                imagePath={gameData.thumbnail}
                 small
                 outlined
                 onPress={handleGameSelect}
@@ -77,7 +90,25 @@ export const PlayCreatePage = () => {
                 onPress={handleGameSelect}
               />
             )}
-            <ActionChip title="Played on?" small outlined />
+
+            {date ? (
+              <ActionChip
+                title={format(
+                  new Date(startOfDay(date).toISOString()),
+                  'E, d MMM yyyy'
+                )}
+                small
+                outlined
+                onPress={handleDatePickerToggle}
+              />
+            ) : (
+              <ActionChip
+                title="Played on?"
+                small
+                outlined
+                onPress={handleDatePickerToggle}
+              />
+            )}
           </View>
           <ListHeader title="Players" buttonType="text" buttonTitle="Add" />
           {players.map((player) => (
@@ -121,6 +152,14 @@ export const PlayCreatePage = () => {
         <View className="p-4">
           <Button.Box onPress={handleSave}>Save</Button.Box>
         </View>
+        <DatePicker
+          modal
+          open={isDatePickerVisible}
+          date={date ? new Date(date) : new Date()}
+          onConfirm={handleDatePickerChangeValue}
+          onCancel={handleDatePickerToggle}
+          mode="date"
+        />
       </SafeAreaView>
     </View>
   );

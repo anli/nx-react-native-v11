@@ -31,6 +31,8 @@
     "@nx/react": "*",
     "react-native-pager-view": "*",
     "date-fns": "*",
-    "fast-xml-parser": "*"
+    "fast-xml-parser": "*",
+    "lodash.debounce": "*",
+    "react-native-date-picker": "*"
   }
 }
