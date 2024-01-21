@@ -1,4 +1,4 @@
-import { GameImageThumbnail, PlayListItem, useGetGame } from '@entities';
+import { GameImageThumbnail, PlayListItem, useGameOne } from '@entities';
 import { styled } from 'nativewind';
 import { FlatList, ListRenderItem } from 'react-native';
 
@@ -88,7 +88,7 @@ export const PlayList = () => {
 };
 
 const Item = ({ gameId, playerCount, playedDate, players }) => {
-  const { data: game } = useGetGame(gameId);
+  const { data: game } = useGameOne(gameId);
 
   return (
     <PlayListItem

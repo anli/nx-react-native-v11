@@ -1,1 +1,2 @@
-export * from './use-game'
+export * from './use-game-one'
+export * from './use-game-search'

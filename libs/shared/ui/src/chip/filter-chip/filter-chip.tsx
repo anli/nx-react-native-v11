@@ -15,7 +15,7 @@ const PlusIcon = styled(PlusIconNative, { classProps: ['fill', 'stroke'] });
 const CheckIcon = styled(CheckIconNative, { classProps: ['fill', 'stroke'] });
 
 type FilterChipProps = {
-  fixed: boolean;
+  fixed?: boolean;
   onValueChange?: (value?: string) => void;
   defaultValue?: string;
 };
@@ -32,7 +32,7 @@ const FilterChipComponent: FC<PropsWithChildren<FilterChipProps>> = ({
       fixed={fixed}
       onValueChange={onValueChange}
     >
-      <View className={clsx('flex-row')} style={{ gap: 12 }}>
+      <View className={clsx('flex-row flex-wrap')} style={{ gap: 12 }}>
         {children}
       </View>
     </FilterChipProvider>
@@ -54,24 +54,24 @@ const FilterChipOption: FC<FilterChipOptionProps> = ({ id, title }) => {
     <Pressable
       className={clsx(
         'flex-row bg-white rounded-md active:opacity-50 items-center justify-between px-3 border-solid border',
-        selected ? 'border-green-500' : 'border-transparent',
+        selected ? 'border-green-500' : 'border border-gray-300',
         fixed ? 'flex-1' : ''
       )}
       style={{ gap: 8 }}
       onPress={handlePress}
     >
       <Text
-        type="body1"
-        className={clsx('py-3', 'text-black')}
+        type="body2"
+        className={clsx('py-2.5', 'text-black')}
         numberOfLines={1}
       >
         {title}
       </Text>
       {selected && (
-        <CheckIcon fill="fill-green-500" stroke="stroke-green-500" size={20} />
+        <CheckIcon fill="fill-green-500" stroke="stroke-green-500" size={16} />
       )}
       {!selected && (
-        <PlusIcon fill="fill-gray-400" stroke="stroke-gray-400" size={20} />
+        <PlusIcon fill="fill-gray-400" stroke="stroke-gray-400" size={16} />
       )}
     </Pressable>
   );

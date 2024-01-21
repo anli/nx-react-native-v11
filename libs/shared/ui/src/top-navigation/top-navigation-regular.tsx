@@ -24,6 +24,9 @@ export const TopNavigationRegular: FC<TopNavigationRegularProps> = ({
 }) => {
   return (
     <View className="bg-white px-4 h-[50px] justify-between flex-row items-center">
+      <View className="absolute right-0 left-0 items-center">
+        <Text type="heading2">{title}</Text>
+      </View>
       <View>
         {!!closeButton && (
           <closeButton.Component
@@ -32,9 +35,6 @@ export const TopNavigationRegular: FC<TopNavigationRegularProps> = ({
             onPress={closeButton?.onPress}
           />
         )}
-      </View>
-      <View className="absolute right-0 left-0 items-center">
-        <Text type="heading1">{title}</Text>
       </View>
       <View className="flex-row" style={{ gap: 16 }}>
         {buttons?.map((button, index) => (

@@ -38,7 +38,7 @@ export const SearchBar: FC<SearchBarProps> = ({
           <TextInput
             placeholder="Search"
             editable={editable}
-            style={{ paddingVertical: 0, height: 20 }}
+            style={{ paddingVertical: 0, height: 20, width: '100%' }}
             {...rest}
           />
         </View>

@@ -10,6 +10,7 @@ import colors from 'tailwindcss/colors';
 import clsx from 'clsx';
 
 type TextInputProps = NativeTextInputProps & {
+  label?: string;
   textCounter?: boolean;
   required?: boolean;
   error?: boolean;
@@ -17,6 +18,7 @@ type TextInputProps = NativeTextInputProps & {
 };
 
 export const TextInput: FC<TextInputProps> = ({
+  label,
   textCounter,
   value: _value,
   maxLength,
@@ -37,9 +39,11 @@ export const TextInput: FC<TextInputProps> = ({
     <View className="bg-white">
       <View className="flex-row justify-between  items-center">
         <View className="flex-row  items-center" style={{ gap: 4 }}>
-          <Text type="body2" className="text-gray-500">
-            Label
-          </Text>
+          {label && (
+            <Text type="body2" className="text-gray-500">
+              {label}
+            </Text>
+          )}
           {required && (
             <Text type="body2" className="text-red-500">
               *

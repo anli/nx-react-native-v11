@@ -1,18 +1,16 @@
 import { XMLParser } from "fast-xml-parser";
 import { useEffect, useState } from "react";
 
-const baseUrl = 'https://boardgamegeek.com/xmlapi2/';
+const baseUrl = 'https://boardgamegeek.com/xmlapi2';
 
-export const useGetGame = (id: string = '169786') => {
-  const url = `${baseUrl}/thing?type=boardgame&id=${id}`;
+export const useGameSearch = (text: string) => {
+  const url = `${baseUrl}/search?type=boardgame&query=${text.replaceAll(" ", "+")}`;
   const [data, setData] = useState<
     | undefined
     | {
       id?: string;
       name?: string;
-      image?: string;
-      thumbnail?: string;
-    }
+    }[]
   >(undefined);
 
   useEffect(() => {
@@ -23,12 +21,10 @@ export const useGetGame = (id: string = '169786') => {
           ignoreAttributes: false,
         });
         const xmlData = parser.parse(data);
-        return {
-          id: xmlData.items.item?.['@_id'],
-          name: xmlData.items.item?.['name']?.[0]?.['@_value'],
-          image: xmlData.items.item?.['image'],
-          thumbnail: xmlData.items.item?.['thumbnail'],
-        };
+        return xmlData.items?.item?.map(_item => ({
+          id: _item?.['@_id'],
+          name: _item?.name?.['@_value']
+        }))
       })
       .then((_data) => {
         setData(_data);

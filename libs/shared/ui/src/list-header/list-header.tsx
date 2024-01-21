@@ -31,10 +31,12 @@ export const ListHeader: FC<ListHeaderProps> = ({
     >
       <View className="flex-row items-center gap-2">
         {renderTitleIcon?.({ size: 16, color: 'black' })}
-        <Text type="title3">{title}</Text>
+        <Text type="heading3">{title}</Text>
       </View>
       {buttonType === 'text' && (
-        <Text className="text-gray-400">{buttonTitle}</Text>
+        <Text type="heading4" className="text-gray-400">
+          {buttonTitle}
+        </Text>
       )}
       {buttonType === 'right' && <ChevronRightIcon size={16} color="gray" />}
       {buttonType === 'down' && <ChevronDownIcon size={16} color="gray" />}

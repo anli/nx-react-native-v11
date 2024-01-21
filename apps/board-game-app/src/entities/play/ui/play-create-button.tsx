@@ -1,9 +1,16 @@
-import { Icon } from '@nx-react-native/shared-ui';
+import { Icon, Pressable } from '@nx-react-native/shared-ui';
+import { useNavigation } from '@react-navigation/native';
 
 export const PlayCreateButton = (props) => {
+  const { navigate } = useNavigation();
+
   const handleCreatePlay = () => {
-    // Open play create page
+    navigate('PlayCreatePage');
   };
 
-  return <Icon name="PlusIcon" {...props} onPress={handleCreatePlay} />;
+  return (
+    <Pressable onPress={handleCreatePlay}>
+      <Icon name="PlusIcon" {...props} />
+    </Pressable>
+  );
 };

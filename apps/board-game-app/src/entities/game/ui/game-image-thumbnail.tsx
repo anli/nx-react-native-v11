@@ -1,5 +1,5 @@
 import { Image } from '@nx-react-native/shared-ui';
-import { useGetGame } from '../model';
+import { useGameOne } from '../model';
 import { FC } from 'react';
 
 type GameImageThumbnailProps = {
@@ -7,14 +7,18 @@ type GameImageThumbnailProps = {
 };
 
 export const GameImageThumbnail: FC<GameImageThumbnailProps> = ({ id }) => {
-  const { data: gameData } = useGetGame(id);
+  const { data: gameData } = useGameOne(id);
 
-  return (
-    <Image
-      source={{ uri: gameData?.thumbnail }}
-      height={40}
-      width={40}
-      className="rounded"
-    />
-  );
+  if (gameData?.thumbnail) {
+    return (
+      <Image
+        source={{ uri: gameData?.thumbnail }}
+        height={40}
+        width={40}
+        className="rounded"
+      />
+    );
+  }
+
+  return null;
 };

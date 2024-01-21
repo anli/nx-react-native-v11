@@ -5,7 +5,7 @@ import { View } from '../view';
 import { RadioButtonProvider, useRadioButton } from './radio-button-context';
 
 type RadioButtonProps = {
-  disabled: boolean;
+  disabled?: boolean;
   onValueChange?: (value?: string) => void;
   defaultValue?: string;
 };
