@@ -5,7 +5,7 @@ import { Pressable } from '../../pressable';
 import { PressableProps } from 'react-native';
 import { Image } from '../../image';
 
-type ActionChipProps = PressableProps & {
+export type ActionChipProps = PressableProps & {
   title: string;
   small?: boolean;
   outlined?: boolean;

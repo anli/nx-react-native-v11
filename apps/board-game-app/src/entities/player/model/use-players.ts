@@ -1,22 +1,22 @@
 const data = [
   {
-    id: 'P1' as const,
+    id: 'P1',
     name: 'John',
     isMe: true,
     imageUrl: 'https://avatar.iran.liara.run/public?username=John',
   },
   {
-    id: 'P2' as const,
+    id: 'P2',
     name: 'Ashley',
     imageUrl: 'https://avatar.iran.liara.run/public?username=Ashley',
   },
   {
-    id: 'P3' as const,
+    id: 'P3',
     name: 'Mary',
     imageUrl: 'https://avatar.iran.liara.run/public?username=Mary',
   },
   {
-    id: 'P4' as const,
+    id: 'P4',
     name: 'Jane',
     imageUrl: 'https://avatar.iran.liara.run/public?username=Jane',
   },

@@ -1,22 +1,29 @@
 import {
-  ActionChip,
   Button,
-  Icon,
-  List,
   ListHeader,
-  Pressable,
   TopNavigation,
   View,
 } from '@nx-react-native/shared-ui';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { BackNavigationButton } from '@shared';
+import { BackNavigationButton, useYupValidationResolver } from '@shared';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { useCurrentPlayer, useGameOne, usePlayerOne } from '@entities';
-import DatePicker from 'react-native-date-picker';
-import { FC, useState } from 'react';
-import { format, startOfDay } from 'date-fns';
+import { useCurrentPlayer } from '@entities';
+import { useEffect } from 'react';
+import { startOfDay } from 'date-fns';
+import { Controller, useForm } from 'react-hook-form';
+import { GameSelectChip } from './game-select-chip';
+import { DateSelectChip } from './date-select-chip';
+import { PlayPlayerItem } from './play-player-item';
+import * as yup from 'yup';
 
-const results = {
+const results: Record<
+  string,
+  {
+    isWinner?: boolean;
+    points: number;
+    isMe?: boolean;
+  }
+> = {
   P1: {
     isWinner: true,
     points: 45,
@@ -28,34 +35,50 @@ const results = {
   },
 };
 
+type FormData = {
+  gameId: string;
+  date: string;
+  playerIds: string[];
+};
+
+const validationSchema = yup.object({
+  gameId: yup.string().required('Required'),
+  date: yup.string().required('Required'),
+  playerIds: yup.array().min(1),
+});
+
 export const PlayCreatePage = () => {
-  const { canGoBack, goBack, navigate, setParams } = useNavigation();
+  const resolver = useYupValidationResolver(validationSchema);
+  const { canGoBack, goBack, navigate } = useNavigation();
   const { data: currentPlayer } = useCurrentPlayer();
   const defaultValues = {
     gameId: undefined,
     date: startOfDay(new Date()).toISOString(),
     playerIds: [currentPlayer.id],
   };
-  const { params: { gameId, date, playerIds } = defaultValues } =
+  const { params: { gameId, playerIds } = {} } =
     useRoute<ReactNavigation.RouteProps<'PlayCreatePage'>>();
-  const { data: gameData } = useGameOne(gameId);
-  const [isDatePickerVisible, setIsDatePickerVisible] = useState(false);
+  const {
+    control,
+    setValue,
+    handleSubmit,
+    formState: { isValid },
+  } = useForm<FormData>({
+    defaultValues,
+    resolver,
+  });
 
-  const handleSave = () => {
+  useEffect(() => {
+    setValue('gameId', gameId, { shouldValidate: true });
+  }, [gameId, setValue]);
+
+  useEffect(() => {
+    setValue('playerIds', playerIds, { shouldValidate: true });
+  }, [playerIds, setValue]);
+
+  const handleSave = handleSubmit((data) => {
     canGoBack() && goBack();
-  };
-
-  const handleGameSelect = () => navigate('GameSelectPage');
-
-  const handleDatePickerChangeValue = (date: Date) => {
-    setIsDatePickerVisible(false);
-    setParams({ date: startOfDay(date).toISOString() });
-  };
-
-  const handleDatePickerToggle = () =>
-    setIsDatePickerVisible((_visible) => !_visible);
-
-  const handleSelectPlayer = () => navigate('PlayerSelectPage', { playerIds });
+  });
 
   return (
     <View className="bg-white flex-1">
@@ -69,104 +92,51 @@ export const PlayCreatePage = () => {
         <View className="flex-1">
           <ListHeader title="Game" />
           <View className="px-4 py-2 flex-row flex-wrap" style={{ gap: 12 }}>
-            {gameId && gameData ? (
-              <ActionChip
-                title={gameData.name}
-                imagePath={gameData.thumbnail}
-                small
-                outlined
-                onPress={handleGameSelect}
-              />
-            ) : (
-              <ActionChip
-                title="What did you played?"
-                small
-                outlined
-                onPress={handleGameSelect}
-              />
-            )}
-
-            {date ? (
-              <ActionChip
-                title={format(
-                  new Date(startOfDay(date).toISOString()),
-                  'E, d MMM yyyy'
-                )}
-                small
-                outlined
-                onPress={handleDatePickerToggle}
-              />
-            ) : (
-              <ActionChip
-                title="Played on?"
-                small
-                outlined
-                onPress={handleDatePickerToggle}
-              />
-            )}
-          </View>
-          <ListHeader
-            title="Players"
-            buttonType="text"
-            buttonTitle="Select"
-            onPress={handleSelectPlayer}
-          />
-          {playerIds?.map((playerId) => (
-            <PlayPlayerItem
-              key={playerId}
-              playerId={playerId}
-              {...results[playerId]}
+            <Controller
+              name="gameId"
+              control={control}
+              render={({ field: { value } }) => <GameSelectChip id={value} />}
             />
-          ))}
+            <Controller
+              name="date"
+              control={control}
+              render={({ field: { value, onChange } }) => (
+                <DateSelectChip value={value} onChange={onChange} />
+              )}
+            />
+          </View>
+
+          <Controller
+            name="playerIds"
+            control={control}
+            render={({ field: { value } }) => (
+              <>
+                <ListHeader
+                  title="Players"
+                  buttonType="text"
+                  buttonTitle="Select"
+                  onPress={() =>
+                    navigate('PlayerSelectPage', { playerIds: value })
+                  }
+                />
+                {value?.map((playerId) => (
+                  <PlayPlayerItem
+                    key={playerId}
+                    playerId={playerId}
+                    {...results[playerId]}
+                  />
+                ))}
+              </>
+            )}
+          />
         </View>
 
         <View className="p-4">
-          <Button.Box onPress={handleSave}>Save</Button.Box>
+          <Button.Box disabled={!isValid} onPress={handleSave}>
+            Save
+          </Button.Box>
         </View>
-        <DatePicker
-          modal
-          open={isDatePickerVisible}
-          date={date ? new Date(date) : new Date()}
-          onConfirm={handleDatePickerChangeValue}
-          onCancel={handleDatePickerToggle}
-          mode="date"
-        />
       </SafeAreaView>
     </View>
-  );
-};
-
-const PlayPlayerItem: FC<{
-  playerId: string;
-  points: number;
-  isWinner?: boolean;
-}> = ({ playerId, points, isWinner }) => {
-  const { data: player } = usePlayerOne(playerId);
-  const description = points ? `${points} points` : 'Tap to update result';
-
-  return (
-    <List.Item
-      title={player?.name}
-      description={description}
-      LeftComponent={
-        <Pressable className="items-center justify-center">
-          {isWinner ? (
-            <Icon name="TrophyIcon" size={20} color="black" type="outline" />
-          ) : (
-            <Icon name="UserIcon" size={20} color="black" type="outline" />
-          )}
-        </Pressable>
-      }
-      RightComponent={
-        <Pressable>
-          <Icon
-            name="EllipsisVerticalIcon"
-            size={24}
-            color="gray"
-            type="outline"
-          />
-        </Pressable>
-      }
-    />
   );
 };
