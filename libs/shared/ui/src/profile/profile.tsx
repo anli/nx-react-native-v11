@@ -65,7 +65,7 @@ const storyRingConfigs: StoryRingConfigs = {
   none: 'border-transparent',
 };
 
-type ProfileProps = {
+export type ProfileProps = {
   size?: SizeConfigKey;
   storyRing?: StoryRingConfigKey;
   renderIcon?: (props: SvgProps & { size?: NumberProp }) => JSX.Element;

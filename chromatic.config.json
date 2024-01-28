@@ -1,8 +1,5 @@
 {
   "autoAcceptChanges": true,
   "exitOnceUploaded": true,
-  "externals": [
-    "public/**"
-  ],
-  "onlyChanged": true
+  "onlyChanged": false
 }

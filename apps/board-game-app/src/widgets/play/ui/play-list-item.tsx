@@ -1,12 +1,14 @@
 import { formatDistanceToNow } from 'date-fns';
-import { Badge, Icon, List, Profile, View } from '@nx-react-native/shared-ui';
+import { Icon, List, View } from '@nx-react-native/shared-ui';
 import { FC } from 'react';
+import { PlayerImageThumbnail } from '@entities';
 
 type PlayListItemProps = {
   title: string;
   playerCount: number;
   playedDate: string;
   players: {
+    id: string;
     isWinner: boolean;
     isMe: boolean;
     name: string;
@@ -42,10 +44,8 @@ export const PlayListItem: FC<PlayListItemProps> = ({
             .map((player) => {
               return (
                 <View key={player.name}>
-                  <Profile
-                    source={{ uri: player.imageUrl }}
-                    size="xs"
-                    renderBadge={player.isMe ? () => <Badge.Dot /> : undefined}
+                  <PlayerImageThumbnail
+                    id={player.id}
                     renderIcon={(props) => (
                       <Icon name="TrophyIcon" {...props} />
                     )}

@@ -1,6 +1,7 @@
-import { GameImageThumbnail, PlayListItem, useGameOne } from '@entities';
+import { GameImageThumbnail, useGameOne } from '@entities';
 import { styled } from 'nativewind';
 import { FlatList, ListRenderItem } from 'react-native';
+import { PlayListItem } from './play-list-item';
 
 const StyledFlatList = styled(FlatList, {
   props: {
@@ -13,6 +14,7 @@ type Item = {
   playerCount: number;
   playedDate: string;
   players: {
+    id: string;
     name: string;
     imageUrl: string;
     isWinner?: boolean;
@@ -26,14 +28,22 @@ const data: Item[] = [
     playedDate: '2023-10-22T08:00:00.000Z',
     players: [
       {
+        id: 'P1',
         name: 'John',
         imageUrl: 'https://avatar.iran.liara.run/public?username=John',
         isWinner: true,
         isMe: true,
       },
       {
+        id: 'P2',
         name: 'Ashley',
+        isWinner: true,
         imageUrl: 'https://avatar.iran.liara.run/public?username=Ashley',
+      },
+      {
+        id: 'P3' as const,
+        name: 'Mary',
+        imageUrl: 'https://avatar.iran.liara.run/public?username=Mary',
       },
     ],
   },
@@ -43,11 +53,13 @@ const data: Item[] = [
     playedDate: '2023-03-22T08:00:00.000Z',
     players: [
       {
+        id: 'P1',
         name: 'John',
         imageUrl: 'https://avatar.iran.liara.run/public?username=John',
         isMe: true,
       },
       {
+        id: 'P2',
         name: 'Ashley',
         imageUrl: 'https://avatar.iran.liara.run/public?username=Ashley',
         isWinner: true,
@@ -60,11 +72,13 @@ const data: Item[] = [
     playedDate: '2023-06-22T08:00:00.000Z',
     players: [
       {
+        id: 'P1',
         name: 'John',
         imageUrl: 'https://avatar.iran.liara.run/public?username=John',
         isMe: true,
       },
       {
+        id: 'P2',
         name: 'Ashley',
         imageUrl: 'https://avatar.iran.liara.run/public?username=Ashley',
         isWinner: true,

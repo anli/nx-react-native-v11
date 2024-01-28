@@ -4,7 +4,14 @@ import {
 } from '@nx-react-native/shared-ui';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { GameSelectPage, PlayCreatePage, PlaysPage, StatsPage } from '@pages';
+import {
+  GameSelectPage,
+  PlayCreatePage,
+  PlayerCreatePage,
+  PlayerSelectPage,
+  PlaysPage,
+  StatsPage,
+} from '@pages';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -77,6 +84,8 @@ export const RootStack = () => {
       </Stack.Group>
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="GameSelectPage" component={GameSelectPage} />
+        <Stack.Screen name="PlayerSelectPage" component={PlayerSelectPage} />
+        <Stack.Screen name="PlayerCreatePage" component={PlayerCreatePage} />
       </Stack.Group>
     </Stack.Navigator>
   );
