@@ -2,7 +2,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 export type RootStackParamList = {
   Tabs: undefined;
-  PlayCreatePage?: { gameId?: string, date?: string, playerIds?: string[] };
+  PlayCreatePage?: { gameId?: string, playerIds?: string[] };
   StatsPage: undefined;
   PlaysPage: undefined;
   GameSelectPage: undefined;
