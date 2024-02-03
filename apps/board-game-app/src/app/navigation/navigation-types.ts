@@ -8,6 +8,9 @@ export type RootStackParamList = {
   GameSelectPage: undefined;
   PlayerSelectPage: { playerIds: string[] };
   PlayerCreatePage: undefined;
+  WelcomePage: undefined;
+  ProfilePage: undefined;
+  LoadingPage: undefined;
 };
 
 
