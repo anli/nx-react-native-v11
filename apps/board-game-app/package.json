@@ -33,6 +33,9 @@
     "date-fns": "*",
     "fast-xml-parser": "*",
     "lodash.debounce": "*",
-    "react-native-date-picker": "*"
+    "react-native-date-picker": "*",
+    "react-hook-form": "*",
+    "yup": "*",
+    "react-native-auth0": "*"
   }
 }
